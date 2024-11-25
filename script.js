@@ -5,7 +5,7 @@ const prevButton = document.getElementById('prevButton');
 const audioElement = document.getElementById('background-audio');  // Get the audio element
 const playPauseBtn = document.getElementById('playPauseBtn');
 
-audioElement.volume = 0.2;
+audioElement.volume = 0.02;
 
 // Event listener for the next button
 nextButton.addEventListener('click', function() {
