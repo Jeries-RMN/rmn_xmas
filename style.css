@@ -1,4 +1,4 @@
-/* Styling already seems fine, no major changes needed */
+/* Basic reset */
 * {
     margin: 0;
     padding: 0;
@@ -14,6 +14,7 @@ html, body {
     background-color: #2879be;
 }
 
+/* Flipbook container */
 .flipbook-container {
     background-color: rgba(255, 255, 255, 0.495);
     width: 100%;
@@ -24,6 +25,7 @@ html, body {
     perspective: 1500px;
 }
 
+/* Flipbook pages layout */
 .flipbook {
     display: flex;
     justify-content: center;
@@ -36,6 +38,7 @@ html, body {
     height: 100%;
 }
 
+/* Each page styling */
 .page {
     width: 100%;
     max-width: 400px;
@@ -60,6 +63,7 @@ html, body {
     object-fit: cover;
 }
 
+/* Button container styling */
 .buttons {
     margin-top: 20px;
     display: flex;
@@ -67,6 +71,7 @@ html, body {
     gap: 15px;
 }
 
+/* Button styling */
 button {
     padding: 12px 25px;
     background-color: #007BFF;
@@ -99,34 +104,52 @@ button:disabled {
 /* Mobile and tablet responsiveness */
 @media screen and (max-width: 768px) {
     .flipbook {
-        /* Ensure pages are arranged in a row */
+        /* Pages are arranged in a row for mobile screens */
         flex-wrap: nowrap;
         justify-content: center;
     }
 
-    /* Page width adjustments for smaller screens */
+    /* Adjust page widths for smaller screens */
     .page {
-        width: 45%; /* Each page takes up 45% of the width */
-        display: block; /* Make sure pages are visible */
+        width: 45%; /* Pages take up 45% of the width */
+        display: block; /* Ensure pages are visible */
     }
 
-    /* Additional styling to make it look good on mobile */
+    /* Reduce padding for smaller screens */
     .flipbook-container {
-        padding: 10px; /* Reduce padding for smaller screens */
+        padding: 10px;
+    }
+
+    /* Make the play/pause button smaller and centered */
+    #playPauseBtn {
+        padding: 10px 20px;
+        font-size: 14px;
+        width: 60%;
+        margin-top: 20px;
     }
 }
 
+/* Larger screens (768px and above) */
 @media screen and (min-width: 768px) {
     .flipbook {
         flex-wrap: wrap;
         justify-content: space-evenly;
     }
 
+    /* Pages displayed inline */
     .page:nth-child(2), .page:nth-child(3) {
         display: inline-block;
     }
+
+    /* Play/Pause button styling for larger screens */
+    #playPauseBtn {
+        width: 30%;
+        font-size: 16px;
+        padding: 12px 25px;
+    }
 }
 
+/* Audio controls section */
 .audio-controls {
     margin-top: 20px;
     text-align: center;
@@ -141,14 +164,20 @@ button:disabled {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     width: 40%;
 }
 
 #playPauseBtn:hover {
-    background-color: #82b463;
+    background-color: #ffffff7a;
 }
 
 #playPauseBtn:focus {
     outline: none;
+}
+
+/* Audio volume control slider */
+input[type="range"] {
+    width: 60%;
+    margin-top: 10px;
+    cursor: pointer;
 }

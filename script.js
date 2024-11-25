@@ -89,10 +89,10 @@ function updatePages() {
 playPauseBtn.addEventListener('click', function() {
     if (audioElement.paused) {
         audioElement.play();
-        playPauseBtn.textContent = '⏸️';  // Change button text to "Pause"
+        playPauseBtn.textContent = '|| Pause Music';  // Change button text to "Pause"
     } else {
         audioElement.pause();
-        playPauseBtn.textContent = '▶️';  // Change button text to "Play"
+        playPauseBtn.textContent = '▶ Play Music';  // Change button text to "Play"
     }
 
 });
