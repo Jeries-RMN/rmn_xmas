@@ -1,3 +1,4 @@
+/* Styling already seems fine, no major changes needed */
 * {
     margin: 0;
     padding: 0;
@@ -124,4 +125,30 @@ button:disabled {
     .page:nth-child(2), .page:nth-child(3) {
         display: inline-block;
     }
+}
+
+.audio-controls {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#playPauseBtn {
+    padding: 12px 25px;
+    background-color: #ffffff7a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 40%;
+}
+
+#playPauseBtn:hover {
+    background-color: #82b463;
+}
+
+#playPauseBtn:focus {
+    outline: none;
 }

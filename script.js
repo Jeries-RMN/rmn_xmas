@@ -2,6 +2,10 @@ let currentPage = 0; // Tracks the current page state (from 0 to 3)
 const pages = document.querySelectorAll('.flipbook .page');
 const nextButton = document.getElementById('nextButton');
 const prevButton = document.getElementById('prevButton');
+const audioElement = document.getElementById('background-audio');  // Get the audio element
+const playPauseBtn = document.getElementById('playPauseBtn');
+
+audioElement.volume = 0.2;
 
 // Event listener for the next button
 nextButton.addEventListener('click', function() {
@@ -81,5 +85,17 @@ function updatePages() {
     }, 10);  // Small delay to allow for reflow before applying transform
 }
   
+
+playPauseBtn.addEventListener('click', function() {
+    if (audioElement.paused) {
+        audioElement.play();
+        playPauseBtn.textContent = '⏸️';  // Change button text to "Pause"
+    } else {
+        audioElement.pause();
+        playPauseBtn.textContent = '▶️';  // Change button text to "Play"
+    }
+
+});
+
 // Initial page setup
 updatePages();
